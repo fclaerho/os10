@@ -20,7 +20,7 @@ jmp 0x7C0:start
 
 ; String resources:
 	_welcome
-		db 'Copyright (C) 2003-2007 Ghost Corp. - Licended under the GPL.',13
+		db 'Copyright (C) 2007-2015 fclaerhout.fr, released under the MIT license',13
 		db 'O/S 9 Booting, please wait.',13,0
 	_CPUCheck db '> Checking CPU compatibility...',0
 	_driveReset db '> Resetting drive...',0
