@@ -7,7 +7,7 @@
 ; Bootdisk floppy image generation:
 ;   dd if=/dev/zero of=bootdisk_image bs=512 count=2880
 ; Copy of the bootloader to the 1st sector of the image:
-; 	dd if=os10_image of=bootdisk_image conv=notrunc
+;   dd if=os10_image of=bootdisk_image conv=notrunc
 ; Simulation with qemu:
 ;   qemu -fda bootdisk_image -boot a
 
