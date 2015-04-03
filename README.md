@@ -1,7 +1,7 @@
 Hello world x86 bootloader.
 
-Nothing fancy: it fetches its code from the boot device after the BIOS is done and print a welcome string.
+This is **literate programming**[1]: each version adds a feature and explains it.
 
-It's named O/S 10 because it's the version 10 of the code (and last version so far.)
+The last version, os10, still a work in progress, fetches its code from the boot device sectors start probing the machine caps.
 
-Compilation and usage instructions are included in the source file.
+[1] http://en.wikipedia.org/wiki/Literate_programming

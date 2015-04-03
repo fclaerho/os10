@@ -1,6 +1,5 @@
-; Copyright (C) 2007-2015 fclaerhout.fr, released under the MIT license
+; Copyright (C) 2007-2015 fclaerhout.fr - Licenced under the GPL.
 ; 20070315
-; 20150403 edited copyright
 
 ; Compilation:
 ;   nasm -f bin os10_source -o os10_image
@@ -21,7 +20,7 @@ jmp 0x7C0:start
 
 ; String resources:
 	_welcome
-		db 'Copyright (C) 2003-2015 fclaerhout.fr, released under the MIT license',13
+		db 'Copyright (C) 2003-2007 Ghost Corp. - Licended under the GPL.',13
 		db 'O/S 10 Starting, please wait.',13,0
 	_CPUCheck db '> Checking CPU compatibility...',0
 	_driveReset db '> Resetting boot device...',0
@@ -154,7 +153,8 @@ loadNextSectors:
 	ret
 
 
-; Reset the boot device, BIOS(0x13,0). DL contains the drive number. Use AX,DL,SI.
+; Reset the boot device, BIOS(0x13,0).
+; DL contains the drive number. Use AX,DL,SI.
 BIOSResetDrive:
 	mov ax,_driveReset
 	call outputString
