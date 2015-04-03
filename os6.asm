@@ -4,7 +4,7 @@
 ; This bootloader clears the screen and offers a basic output routine+scrolling.
 ; Compilation: nasm -f bin os6_source -o os6_image
 ; Bootdisk floppy image: dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-; 	dd if=os6_image of=bootdisk_image conv=notrunc
+;   dd if=os6_image of=bootdisk_image conv=notrunc
 ; Simulation: bochs -q or qemu -fda bootdisk_image -boot a
 
 ; The BIOS loads us at 0x7C00 in Real-Mode (16bit mode).

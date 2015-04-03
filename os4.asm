@@ -3,7 +3,7 @@
 ; This bootloader clears the screen and output 'pw3d!'.
 ; Compilation: nasm -f bin os4_source -o os4_image
 ; Bootdisk floppy image: dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-; 	dd if=os4_image of=bootdisk_image conv=notrunc
+;   dd if=os4_image of=bootdisk_image conv=notrunc
 ; Simulation: bochs -q or qemu -fda bootdisk_image -boot a
 
 ; The BIOS loads us at 0x7C00 in Real-Mode (16bit mode).
