@@ -45,7 +45,7 @@
 			jz .stop
 			dec si
 			jmp .start
-		.stop
+		.stop:
 			pop si
 			ret
 
@@ -85,7 +85,6 @@
 			mov [lastCol],di
 			popa
 			ret
-
 
 ; ASCIZ strings and data.
 	starting db 'O/S 5, Starting...',13,0

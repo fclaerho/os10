@@ -56,7 +56,7 @@
 			jz .stop
 			dec si
 			jmp .start
-		.stop
+		.stop:
 			pop si
 			ret
 
@@ -83,7 +83,7 @@
 			jz .end
 			inc si
 			jmp .clearLastLine
-		.end
+		.end:
 			pop di
 			pop si
 			pop ax

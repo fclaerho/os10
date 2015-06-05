@@ -45,7 +45,7 @@
 			jz .stop
 			dec si
 			jmp .start
-		.stop
+		.stop:
 			pop si
 			ret
 

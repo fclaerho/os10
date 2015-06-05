@@ -67,7 +67,7 @@ clearScreen:
 		jz .stop
 		dec si
 		jmp .start
-	.stop
+	.stop:
 		ret
 	
 
@@ -100,7 +100,7 @@ outputString:
 		xor di,di
 		inc bx
 		jmp .start
-	.end
+	.end:
 		mov [lastPosition],si
 		mov [lastCol],di
 		ret
@@ -158,9 +158,9 @@ BIOSResetDrive:
 		dec si
 		cmp si,0 ; Can we try again?
 		jne .start
-	.failed
+	.failed:
 		jmp failed
-	.succeeded
+	.succeeded:
 		mov ax,_OK
 		call outputString
 		ret

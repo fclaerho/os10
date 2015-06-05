@@ -66,7 +66,7 @@ clearScreen:
 		jz .stop
 		dec si
 		jmp .start
-	.stop
+	.stop:
 		ret
 	
 
@@ -99,7 +99,7 @@ outputString:
 		xor di,di
 		inc bx
 		jmp .start
-	.end
+	.end:
 		mov [lastPosition],si
 		mov [lastCol],di
 		ret
@@ -160,7 +160,7 @@ BIOSResetDrive:
 		jne .start
 	.failed
 		jmp failed
-	.succeeded
+	.succeeded:
 		mov ax,_OK
 		call outputString
 		ret
@@ -426,7 +426,7 @@ getSMAP:
 					add bx,16
 				.skip2
 				jmp .entryStart
-			.entryEnd
+			.entryEnd:
 				push ax
 				push bx
 				push si
@@ -467,7 +467,7 @@ getSMAP:
 				.outputUndefinedTag:
 					mov ax,_undefinedTag
 					call outputString
-			.end
+			.end:
 				pop di
 				pop si
 				pop bx
@@ -475,5 +475,5 @@ getSMAP:
 				inc ah
 				add bx,8
 				jmp .forEachEntry
-		.outputEnd
+		.outputEnd:
 			jmp stop

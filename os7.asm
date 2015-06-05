@@ -73,9 +73,9 @@
 			dec si
 			cmp si,0 ; Can we try again?
 			jne .start
-		.failed
+		.failed:
 			jmp stop
-		.succeeded
+		.succeeded:
 			ret
 
 
