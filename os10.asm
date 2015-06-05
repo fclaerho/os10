@@ -10,7 +10,7 @@ jmp 0x7C0:start
 
 
 ; String resources:
-	_welcome
+	_welcome:
 		db 'Copyright (C) 2003-2007 Ghost Corp. - Licended under the GPL.',13
 		db 'O/S 10 Starting, please wait.',13,0
 	_CPUCheck db '> Checking CPU compatibility...',0
@@ -158,7 +158,7 @@ BIOSResetDrive:
 		dec si
 		cmp si,0 ; Can we try again?
 		jne .start
-	.failed
+	.failed:
 		jmp failed
 	.succeeded:
 		mov ax,_OK
@@ -253,7 +253,7 @@ getSMAP:
 		call outputString
 		and ebx,0
 		mov di,0x518
-		.start
+		.start:
 			mov eax,0x0000E820
 			mov edx,'PAMS' ; 'SMAP' (System Map) in the right byte order.
 			mov ecx,24
@@ -271,7 +271,7 @@ getSMAP:
 			jmp .start
 		.succeeded:
 			jmp outputSMAP
-		.failed
+		.failed:
 
 	BIOSxE820:
 		; Same thing as above except a system map entry does 20 bytes.
@@ -279,7 +279,7 @@ getSMAP:
 		call outputString
 		and ebx,0
 		mov di,0x518
-		.start
+		.start:
 			mov eax,0x0000E820
 			mov edx,'PAMS'
 			mov ecx,20
@@ -297,7 +297,7 @@ getSMAP:
 			jmp .start
 		.succeeded:
 			jmp outputSMAP
-		.failed
+		.failed:
 
 	BIOSxE881:
 		mov ax,_BIOSxE881
@@ -419,12 +419,12 @@ getSMAP:
 				jne .skip1
 					add di,2 ; Jump over the ' L'.
 					add bx,16
-				.skip1
+				.skip1:
 				cmp si,16
 				jne .skip2
 					inc di ; Jump over the ' '.
 					add bx,16
-				.skip2
+				.skip2:
 				jmp .entryStart
 			.entryEnd:
 				push ax
