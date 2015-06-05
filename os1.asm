@@ -2,12 +2,6 @@
 
 ; This is a minimal bootloader doing nothing but be bootable.
 
-; Compilation: nasm -f bin os1_source -o os1_image
-; Bootdisk floppy image:
-;   dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-;   dd if=os1_image of=bootdisk_image conv=notrunc
-; Simulation: qemu -fda bootdisk_image -boot a
-
 ; Initially the machine is in 16bit mode, so the program instruction must
 ; respect this specific format (also named encoding) to be run by the CPU.
 ; We indicate the encoding type to the compiler by the BITS directive.

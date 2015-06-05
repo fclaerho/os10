@@ -1,11 +1,6 @@
 ; Copyright (C) 2007-2015 fclaerhout.fr, released under the MIT license
 ; 20070303
 
-; Compilation: nasm -f bin os7_source -o os7_image
-; Bootdisk floppy image: dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-;   dd if=os7_image of=bootdisk_image conv=notrunc
-; Simulation: bochs -q or qemu -fda bootdisk_image -boot a
-
 ; The BIOS loads us at 0:0x7C00 in Real-Mode (16bit mode), we go to 0x7C0:0.
 
 	[ORG 0]

@@ -1,15 +1,6 @@
 ; Copyright (C) 2007-2015 fclaerhout.fr, released under the MIT license
 ; 20070311
 
-; Compilation:
-;   nasm -f bin os9_source -o os9_image
-; Bootdisk floppy image generation:
-;   dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-; Copy of the bootloader to the 1st sector of the image:
-;   dd if=os9_image of=bootdisk_image conv=notrunc
-; Simulation with qemu:
-;   qemu -fda bootdisk_image -boot a
-
 ; The BIOS loads us at 0x7C00 in Real-Mode (16bit), we jump to 0x7C0:start.
 
 [ORG 0]

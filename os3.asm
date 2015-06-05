@@ -2,11 +2,6 @@
 
 ; This is a 'hello world' bootloader setting a temporary runtime environment.
 
-; Compilation: nasm -f bin os3_source -o os3_image
-; Bootdisk floppy image: dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-;   dd if=os3_image of=bootdisk_image conv=notrunc
-; Simulation: bochs -q or qemu -fda bootdisk_image -boot a
-
 ; The BIOS loads us at 0x7C00 in Real-Mode (16bit mode).
 [ORG 0x7C00]
 [BITS 16]

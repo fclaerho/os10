@@ -1,10 +1,6 @@
 ; Copyright (C) 2007-2015 fclaerhout.fr, released under the MIT license
 
 ; This bootloader clears the screen and offers a basic output routine.
-; Compilation: nasm -f bin os5_source -o os5_image
-; Bootdisk floppy image: dd if=/dev/zero of=bootdisk_image bs=512 count=2880
-;   dd if=os5_image of=bootdisk_image conv=notrunc
-; Simulation: bochs -q or qemu -fda bootdisk_image -boot a
 
 ; The BIOS loads us at 0x7C00 in Real-Mode (16bit mode).
 
