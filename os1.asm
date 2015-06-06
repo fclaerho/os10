@@ -8,8 +8,8 @@
 
 [BITS 16]
 
-; The BIOS copies the boot device 1st sector to the physical address 0x7C00
-; and start executing it. The first problem here is that we don't really
+; The BIOS copies the 1st sector of the boot device to the physical address
+; 0x7C00 and start executing it. The 1st problem here is that we don't really
 ; know if the segmented address used by the BIOS is 0:0x7C00 or 0x7C0:0.
 ; On most BIOS, this will be 0:0x7C00 but we cannot be sure. This point
 ; is important as any jump attempted in the code will use the segmented
@@ -30,7 +30,7 @@
 [ORG 0x7C00]
 
 	jmp 0:start
-	
+
 start:
 	; 'hlt' stands for 'halt', it stops the CPU.
 	hlt
